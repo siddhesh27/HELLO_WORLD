@@ -1,0 +1,12 @@
+import java.sql.*;  
+class FetchRecord{  
+public static void main(String args[])throws Exception
+{  
+Class.forName("H2.jdbc.driver.SqlDriver");  
+Connection con=DriverManager.getConnection("jdbc:H2:thin:@localhost:1526:xe","system","H2");  
+Statement stmt=con.createStatement();   
+int result=stmt.executeUpdate("delete from emp765 where id=33");  
+System.out.println(result+" records affected");  
+con.close();  
+}
+}  
